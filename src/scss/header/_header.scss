@@ -1,0 +1,53 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.notifications {
+  background-color: v.$white;
+
+  @include m.desktop {
+    padding-inline: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 8px 24px rgb(149 157 165 / 0.2);
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-inline: 1rem;
+  }
+
+  &__heading-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__haeding {
+    font-weight: bold;
+  }
+
+  &__number-container {
+    background-color: v.$primaryColor;
+    color: v.$white;
+    padding: 2px 5px;
+    width: 3.5rem;
+    height: 3rem;
+    border-radius: 1rem;
+
+    padding-inline: 1px;
+
+    font-size: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-btn {
+    border: none;
+    background-color: v.$white;
+    color: darken(v.$gray, 40%);
+    font-size: 1.5rem;
+  }
+}

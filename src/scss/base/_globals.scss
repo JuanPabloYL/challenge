@@ -1,0 +1,50 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: v.$mediumFont;
+  color: v.$black;
+  @include m.desktop {
+    background-color: v.$backgroundColor;
+  }
+}
+
+.container {
+  @include m.desktop {
+    width: min(50%, 120rem);
+    margin: 5rem auto 10rem auto;
+  }
+}
+
+.active {
+  background-color: darken(v.$secondaryColor, 1%);
+
+  .message__dod {
+    background-color: v.$dotColor;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    display: inline-block;
+    margin-inline: 5px;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+*:focus {
+  outline: dotted v.$primaryColor 3px;
+}
